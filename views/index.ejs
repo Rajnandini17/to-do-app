@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <link rel="stylesheet" href="\styles\styles.css">
+</head>
+<body>
+    <div class="greet">
+    <h1>Hey there, champ!</h1>
+    <h2>It's <%= currentDay %> today. </h2>
+    </div>
+    <div class="to-do">
+    <h2>Add Tasks</h2>
+    </div>
+
+    <ul>
+        
+        <% for(i = 0; i < newListItems.length; i++) { %>
+            <li>
+                <input type="checkbox" <% if (newListItems[i].completed) { %>checked <% } %>>
+                <%= newListItems[i].task %>
+                </span>
+            </li>
+       <% } %>
+    </ul>
+
+    <div class="box">
+    <form action="/" method="post">
+        <input type="text" name="task" placeholder="Add task" autocomplete="off" class="task-input">
+        <button type="submit" class="add-button">&#43;</button>
+    </form>
+    </div>
+</body>
+</html>
